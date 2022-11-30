@@ -1,7 +1,8 @@
 const path = require('path');
-const CircularDependencyPlugin = require('circular-dependency-plugin')
-const DuplicatePackageCheckerPlugin = require("duplicate-package-checker-webpack-plugin");
+const CircularDependencyPlugin = require('circular-dependency-plugin');
+const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
 
@@ -9,8 +10,8 @@ module.exports = {
   context: path.resolve(__dirname, 'source'),
   mode: 'development',
   entry: {
-    layout: './js/layout.js',
-    javascript: './js/javascript.js',
+    main: './js/main.js',
+    vendor: './js/vendor.js',
   },
   devtool: isDev ? 'source-map' : false,
   output: {
@@ -29,12 +30,12 @@ module.exports = {
         options: {
           presets: ['@babel/preset-env'],
         },
-      },
+      }
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new DuplicatePackageCheckerPlugin(),
-    new CircularDependencyPlugin(),
+    new CircularDependencyPlugin()
   ],
 };

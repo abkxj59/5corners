@@ -12,7 +12,7 @@ const webp = require('gulp-webp');
 const svgstore = require('gulp-svgstore');
 const del = require('del');
 const webpackStream = require('webpack-stream');
-const webpackConfig = require('./webpack.config.js');
+const webpackConfig = require('./webpack.config.cjs');
 const gcmq = require('gulp-group-css-media-queries');
 
 const css = () => {
