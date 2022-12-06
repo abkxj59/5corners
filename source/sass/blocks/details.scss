@@ -1,0 +1,135 @@
+.details__field {
+  border: none;
+  padding: 0;
+  margin: 0 0 40px;
+}
+
+.details__field--contacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 18px;
+}
+
+.details__legend {
+  display: block;
+  padding-top: 3px;
+  margin-bottom: 26px;
+  font-size: 28px;
+  line-height: 30px;
+}
+
+.details__field--contacts .details__legend {
+  grid-column: -1 / 1;
+}
+
+.details__contacts-label {
+  display: block;
+  position: relative;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.details__contacts-label--address {
+  grid-column: -1 / 1;
+}
+
+.details__label-text {
+  display: block;
+  position: absolute;
+  left: 16px;
+  top: 15px;
+  padding: 0 4px;
+  background-color: $color-default-white;
+  color: $color-dark-grey;
+  transform-origin: left;
+  transition: $trans-default;
+}
+
+.details__label-button {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $color-dark-grey;
+}
+
+.details__text-input {
+  width: 100%;
+  border: 1px solid $color-dark-grey;
+  padding: 15px 20px;
+  font-size: 16px;
+  line-height: 21px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.details__text-input:focus ~ .details__label-text,
+.details__text-input:valid ~ .details__label-text {
+  transform: translateY(-25px) scale(0.75);
+}
+
+.details__field--payment input[type="radio"] {
+  display: none;
+}
+
+.details__payment-label {
+  display: block;
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+input[type="radio"] + .details__payment-label::before,
+input[type="radio"] + .details__payment-label::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  transition: $trans-default;
+}
+
+input[type="radio"] + .details__payment-label::before {
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid $color-dark-grey;
+}
+
+input[type="radio"]:checked + .details__payment-label::after {
+  top: 5px;
+  left: 5px;
+  width: 12px;
+  height: 12px;
+  background-color: $color-default-black;
+}
+
+.details__comment-input {
+  width: 100%;
+  min-height: 141px;
+  padding: 15px 20px;
+  border: 1px solid $color-dark-grey;
+  font-size: 16px;
+  line-height: 21px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $color-dark-grey;
+  }
+}
+
+.details__limit {
+  margin: 0 20px;
+  font-size: 12px;
+  line-height: 15px;
+  color: $color-dark-grey;
+}

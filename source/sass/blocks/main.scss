@@ -1,0 +1,14 @@
+.main__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 40px;
+}
+
+.main__section--breadcrumbs {
+  grid-column: -1 / 1;
+}
+
+.main__section--total {
+  grid-column: 2;
+  grid-row: 2 / 4;
+}

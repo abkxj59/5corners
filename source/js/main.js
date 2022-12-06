@@ -1,10 +1,11 @@
-
+import {replacePrettyPrices} from './utils/price-prettifiy.js';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
   // Utils
   // ---------------------------------
 
+  replacePrettyPrices();
   // Modules
   // ---------------------------------
 

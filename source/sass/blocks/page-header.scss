@@ -1,0 +1,122 @@
+.page-header {
+  border-bottom: 0.5px solid $color-basic-grey;
+}
+
+.page-header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 72px;
+  position: relative;
+}
+
+.page-header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 40%;
+  padding: 10px 0;
+}
+
+.page-header__nav-link {
+  position: relative;
+  padding: 5px 0;
+  margin-right: 40px;
+  font-size: 14px;
+  line-height: 18px;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $color-default-black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: $trans-default;
+  }
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.page-header__logo {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.page-header__logo-link {
+  padding: 10px;
+
+  & svg {
+    transition: $trans-default;
+  }
+}
+
+.page-header__logo-link:hover,
+.page-header__logo-link:focus-visible {
+  outline: none;
+
+  svg {
+    color: $color-dark-grey;
+  }
+}
+
+.page-header__buttons {
+  display: flex;
+}
+
+.page-header__button {
+  margin-left: 30px;
+  display: block;
+  transition: $trans-default;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $color-dark-grey;
+  }
+}
+
+.page-header__button--favorite,
+.page-header__button--bag {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    transform: translate(50%, -25%);
+    background-color: $color-default-black;
+    color: $color-default-white;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    transition: $trans-default;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    background-color: $color-dark-grey;
+  }
+}
+
+.page-header__button--favorite::after {
+  content: "8";
+}
+
+.page-header__button--bag::after {
+  content: "4";
+}

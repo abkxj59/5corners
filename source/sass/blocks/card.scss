@@ -1,0 +1,233 @@
+.card__form {
+  display: flex;
+  align-items: flex-start;
+}
+
+.card__pic {
+  min-width: 130px;
+  // flex-basis: 130px;
+  flex-shrink: 0;
+}
+
+.card__content {
+  margin-top: 2px;
+  flex-shrink: 20;
+  flex-grow: 2;
+  margin-left: 20px;
+}
+
+.card__title {
+  margin: 0 0 14px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.card__text-label {
+  display: block;
+  margin-bottom: 9px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: $color-dark-grey;
+}
+
+.card__text-value {
+  border: none;
+  background-color: $color-transparent;
+  color: $color-default-black;
+}
+
+.card__sizes {
+  display: flex;
+  margin-bottom: 10px;
+
+  & input[type="radio"] {
+    position: absolute;
+    visibility: hidden;
+  }
+}
+
+.card__size-button {
+  display: block;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  background-color: $color-light-grey;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 30px;
+  transition: $trans-default;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $color-basic-grey;
+  }
+}
+
+input[type="radio"]:focus + .card__size-button {
+  background-color: $color-basic-grey;
+}
+
+input[type="radio"]:checked + .card__size-button {
+  background-color: $color-default-black;
+  color: $color-default-white;
+}
+
+input[type="radio"]:disabled + .card__size-button {
+  color: $color-basic-grey;
+  cursor: default;
+
+  &:hover,
+  &:focus {
+    background-color: $color-light-grey;
+  }
+}
+
+.card__colours {
+  display: flex;
+
+  & input[type="radio"] {
+    display: none;
+  }
+}
+
+.card__colour-button {
+  display: block;
+  padding: 2px;
+  margin-right: 7px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  outline-color: $color-transparent;
+  transition: $trans-default;
+  cursor: pointer;
+
+  &--black {
+    background-color: $color-secondary-black;
+  }
+
+  &--blue {
+    background-color: $color-blue;
+  }
+
+  &--brown {
+    background-color: $color-brown;
+  }
+
+  &:hover {
+    outline: 1px solid $color-basic-grey;
+    outline-offset: 1px;
+  }
+}
+
+input[type="radio"]:checked + .card__colour-button {
+  border: 1px solid $color-default-white;
+  outline: 1px solid $color-default-black;
+  outline-offset: 1px;
+}
+
+.card__prices {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin: 0 10px;
+}
+
+.card__old-price {
+  margin: 3px 0 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-decoration-line: line-through;
+  color: $color-dark-grey;
+}
+
+.card__price {
+  margin: 3px 0 0;
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.card__amount {
+  display: flex;
+  width: 153px;
+  margin: 0 30px;
+  padding: 5px 10px;
+  background-color: $color-light-grey;
+  border-radius: 5px;
+}
+
+.card__num-button {
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background-color: $color-transparent;
+  transition: $trans-default;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-dark-grey;
+  }
+
+  &:disabled {
+    color: $color-basic-grey;
+    cursor: default;
+  }
+}
+
+.card__num-value {
+  width: 100%;
+  text-align: center;
+  border: none;
+  background-color: $color-transparent;
+  color: $color-default-black;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.card__delete {
+  flex-shrink: 0;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: $color-transparent;
+  transition: $trans-default;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $color-dark-grey;
+  }
+}
+
+.card--deleted {
+  display: flex;
+  padding: 15px 25px;
+  background-color: $color-light-grey;
+  color: $color-dark-grey
+}
+
+.card__deleted-message {
+  margin: 0;
+  margin-right: 25px;
+}
+
+.card__deleted-title {
+  font-weight: 700;
+}
+
+.card__recover {
+  border: none;
+  background-color: $color-transparent;
+  padding: 0;
+  margin-right: auto;
+  font-size: 14px;
+  line-height: 18px;
+  color: $color-default-black;
+  cursor: pointer;
+}

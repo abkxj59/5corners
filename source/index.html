@@ -14,10 +14,10 @@
 <body class="page__body">
   <header class="page__header page-header">
     <div class="page-header__wrapper container">
-      <nav class="page-header__nav nav">
-        <a href="#" class="nav__link">Каталог</a>
-        <a href="#" class="nav__link">О компании</a>
-        <a href="#" class="nav__link">Магазины</a>
+      <nav class="page-header__nav">
+        <a href="#" class="page-header__nav-link">Каталог</a>
+        <a href="#" class="page-header__nav-link">О компании</a>
+        <a href="#" class="page-header__nav-link">Магазины</a>
       </nav>
       <div class="page-header__logo">
         <a href="#" class="page-header__logo-link">
@@ -40,13 +40,13 @@
             <use xlink:href="img/sprite.svg#icon-account"></use>
           </svg>
         </a>
-        <a class="page-header__button" href="#">
+        <a class="page-header__button page-header__button--favorite" href="#">
           <svg class="page-header__button-icon" width="20" height="20" aria-labelledby="icon-favorite">
             <title id="icon-favorite">icon-favorite</title>
             <use xlink:href="img/sprite.svg#icon-favorite"></use>
           </svg>
         </a>
-        <a class="page-header__button" href="#">
+        <a class="page-header__button page-header__button--bag" href="#">
           <svg class="page-header__button-icon" width="20" height="20" aria-labelledby="icon-bag">
             <title id="icon-bag">icon-bag</title>
             <use xlink:href="img/sprite.svg#icon-bag"></use>
@@ -80,7 +80,7 @@
 
       <section class="main__section main__section--goods goods">
         <h2 class="main__section-heading visually-hidden">Выбранные товары</h2>
-        <p class="goods__total">3 товара на сумму 25 000 <span class="rouble">i</span></p>
+        <p class="goods__total">3 товара на сумму <span data-price>25000</span> <span class="rouble">i</span></p>
         <ul class="goods__list">
           <li class="goods__item">
             <article class="goods__card card">
@@ -91,48 +91,48 @@
                 </picture>
                 <div class="card__content">
                   <h3 class="card__title">Утепленная стеганая куртка женская Top Hills</h3>
-                  <label class="card__label">
+                  <label class="card__text-label">
                     Артикул
                     <input class="card__text-value" name="article" value="512-05" disabled>
                   </label>
-                  <label class="card__label">
+                  <label class="card__text-label">
                     Сезон
                     <input class="card__text-value" name="season" value="Осень-зима" disabled>
                   </label>
                   <div class="card__sizes">
-                    <label class="card__size-button">
+                    <input type="radio" name="size" value="xs" id="prod-1-size-xs">
+                    <label class="card__size-button" for="prod-1-size-xs">
                       XS
-                      <input type="radio" name="size" value="xs">
                     </label>
-                    <label class="card__size-button">
+                    <input type="radio" name="size" value="s" id="prod-1-size-s">
+                    <label class="card__size-button" for="prod-1-size-s">
                       S
-                      <input type="radio" name="size" value="s">
                     </label>
-                    <label class="card__size-button">
+                    <input type="radio" name="size" value="m" id="prod-1-size-m" checked>
+                    <label class="card__size-button" for="prod-1-size-m">
                       M
-                      <input type="radio" name="size" value="m" checked>
                     </label>
-                    <label class="card__size-button">
+                    <input type="radio" name="size" value="l" id="prod-1-size-l">
+                    <label class="card__size-button" for="prod-1-size-l">
                       L
-                      <input type="radio" name="size" value="l">
                     </label>
-                    <label class="card__size-button">
+                    <input type="radio" name="size" value="xl" id="prod-1-size-xl">
+                    <label class="card__size-button" for="prod-1-size-xl">
                       XL
-                      <input type="radio" name="size" value="xl">
                     </label>
                   </div>
                   <div class="card__colours">
-                    <label class="card__colour-button">
+                    <input type="radio" name="colour" value="black" id="prod-1-color-black" checked>
+                    <label class="card__colour-button card__colour-button--black" for="prod-1-color-black">
                       <span class="visually-hidden">Black</span>
-                      <input type="radio" name="colour" value="black" checked>
                     </label>
-                    <label class="card__colour-button">
+                    <input type="radio" name="colour" value="blue" id="prod-1-color-blue">
+                    <label class="card__colour-button card__colour-button--blue" for="prod-1-color-blue">
                       <span class="visually-hidden">Blue</span>
-                      <input type="radio" name="colour" value="blue">
                     </label>
-                    <label class="card__colour-button">
+                    <input type="radio" name="colour" value="brown" id="prod-1-color-brown">
+                    <label class="card__colour-button card__colour-button--brown" for="prod-1-color-brown">
                       <span class="visually-hidden">Brown</span>
-                      <input type="radio" name="colour" value="brown">
                     </label>
                   </div>
                 </div>
@@ -142,22 +142,30 @@
                       <span class="card__price-value" data-price>12000</span>
                       <span class="rouble">i</span>
                     </p>
-                    <p class="card__new-price">
+                    <p class="card__price">
                       <span class="card__price-value" data-price>10000</span>
                       <span class="rouble">i</span>
                     </p>
                   </div>
                   <div class="card__amount">
-                    <button type="button" class="card__num-button card__num-button--minus">&minus;</button>
+                    <button type="button" class="card__num-button card__num-button--minus">
+                      <svg width="32" height="32">
+                        <use xlink:href="img/sprite.svg#minus"></use>
+                      </svg>
+                    </button>
                     <input type="number" class="card__num-value" name="amount" disabled value="2">
-                    <button type="button" class="card__num-button card__num-button--plus">&plus;</button>
+                    <button type="button" class="card__num-button card__num-button--plus">
+                      <svg width="32" height="32">
+                        <use xlink:href="img/sprite.svg#plus"></use>
+                      </svg>
+                    </button>
                   </div>
                   <div class="card__cost card__cost--total">
                     <p class="card__old-price">
                       <span class="card__price-value" data-price>24000</span>
                       <span class="rouble">i</span>
                     </p>
-                    <p class="card__new-price">
+                    <p class="card__price">
                       <span class="card__price-value" data-price>20000</span>
                       <span class="rouble">i</span>
                     </p>
@@ -193,40 +201,40 @@
                 </picture>
                 <div class="card__content">
                   <h3 class="card__title">Вязанная щапка Zolla</h3>
-                  <label class="card__label">
+                  <label class="card__text-label">
                     Артикул
                     <input class="card__text-value" name="article" value="891-256" disabled>
                   </label>
-                  <label class="card__label">
+                  <label class="card__text-label">
                     Сезон
                     <input class="card__text-value" name="season" value="Демисезон" disabled>
                   </label>
                   <div class="card__sizes">
-                    <label class="card__size-button">
+                    <input type="radio" name="size" value="xs" id="prod-2-size-xs">
+                    <label class="card__size-button" for="prod-2-size-xs">
                       XS
-                      <input type="radio" name="size" value="xs">
                     </label>
-                    <label class="card__size-button">
+                    <input type="radio" name="size" value="s" id="prod-2-size-s" checked>
+                    <label class="card__size-button" for="prod-2-size-s">
                       S
-                      <input type="radio" name="size" value="s" checked>
                     </label>
-                    <label class="card__size-button">
+                    <input type="radio" name="size" value="m" id="prod-2-size-m">
+                    <label class="card__size-button" for="prod-2-size-m">
                       M
-                      <input type="radio" name="size" value="m" >
                     </label>
-                    <label class="card__size-button">
+                    <input type="radio" name="size" value="l" id="prod-2-size-l" disabled>
+                    <label class="card__size-button" for="prod-2-size-l">
                       L
-                      <input type="radio" name="size" value="l" disabled>
                     </label>
-                    <label class="card__size-button">
+                    <input type="radio" name="size" value="xl" id="prod-2-size-xl" disabled>
+                    <label class="card__size-button" for="prod-2-size-xl">
                       XL
-                      <input type="radio" name="size" value="xl" disabled>
                     </label>
                   </div>
                   <div class="card__colours">
-                    <label class="card__colour-button">
+                    <input type="radio" name="colour" value="black" id="prod-2-color-black" checked>
+                    <label class="card__colour-button card__colour-button--black" for="prod-2-color-black">
                       <span class="visually-hidden">Black</span>
-                      <input type="radio" name="colour" value="black" checked>
                     </label>
                   </div>
                 </div>
@@ -238,9 +246,17 @@
                     </p>
                   </div>
                   <div class="card__amount">
-                    <button type="button" class="card__num-button card__num-button--minus">&minus;</button>
-                    <input type="number" class="card__num-value" name="amount" disabled value="2">
-                    <button type="button" class="card__num-button card__num-button--plus">&plus;</button>
+                    <button type="button" class="card__num-button card__num-button--minus">
+                      <svg width="32" height="32">
+                        <use xlink:href="img/sprite.svg#minus"></use>
+                      </svg>
+                    </button>
+                    <input type="number" class="card__num-value" name="amount" disabled value="1">
+                    <button type="button" class="card__num-button card__num-button--plus">
+                      <svg width="32" height="32">
+                        <use xlink:href="img/sprite.svg#plus"></use>
+                      </svg>
+                    </button>
                   </div>
                   <div class="card__cost card__cost--total">
                     <p class="card__price">
@@ -263,20 +279,33 @@
 
       <section class="main__section main__section--details details">
         <form class="details__form">
-          <fieldset class="details__field">
+          <fieldset class="details__field details__field--contacts">
             <legend class="details__legend">Контактные данные</legend>
-            <label class="details__text-label" for="first-name">Имя</label>
-            <input class="details__text-input" name="first-name" id="first-name" required>
-            <label class="details__text-label" for="last-name">Фамилия</label>
-            <input class="details__text-input" name="last-name" id="last-name" required>
-            <label class="details__text-label" for="tel">Телефон</label>
-            <input type="tel" class="details__text-input" name="tel" id="tel" required>
-            <label class="details__text-label" for="email">Email</label>
-            <input type="email" class="details__text-input" name="email" id="email" required>
-            <label class="details__text-label" for="address">Адрес доставки</label>
-            <input type="email" class="details__text-input" name="address" id="address" required>
+            <label class="details__contacts-label" for="first-name">
+              <input class="details__text-input" name="first-name" id="first-name" required>
+              <span class="details__label-text">Имя</span>
+            </label>
+            <label class="details__contacts-label" for="last-name">
+              <input class="details__text-input" name="last-name" id="last-name" required>
+              <span class="details__label-text">Фамилия</span>
+            </label>
+            <label class="details__contacts-label" for="tel">
+              <input type="tel" class="details__text-input" name="tel" id="tel" required>
+              <span class="details__label-text">Телефон</span>
+            </label>
+            <label class="details__contacts-label" for="email">
+              <input type="email" class="details__text-input" name="email" id="email" required>
+              <span class="details__label-text">Email</span>
+            </label>
+            <label class="details__contacts-label details__contacts-label--address" for="address">
+              <input type="address" class="details__text-input" name="address" id="address" required>
+              <span class="details__label-text">Адрес доставки</span>
+              <svg class="details__label-button" width="20" height="20">
+                <use xlink:href="img/sprite.svg#icon-search"></use>
+              </svg>
+            </label>
           </fieldset>
-          <fieldset class="details__field">
+          <fieldset class="details__field details__field--payment">
             <legend class="details__legend">Оплата</legend>
             <input type="radio" name="payment" value="cash-courier" id="cash-courier" checked>
             <label class="details__payment-label" for="cash-courier">Наличными курьеру</label>
@@ -286,8 +315,8 @@
             <label class="details__payment-label" for="card-online">Картой онлайн</label>
           </fieldset>
           <fieldset class="details__field">
-            <legend class="details__legeng">Комментарий к заказу</legend>
-            <textarea name="comment" maxlength="142">Комментарий к заказу</textarea>
+            <legend class="details__legend">Комментарий к заказу</legend>
+            <textarea class="details__comment-input" name="comment" maxlength="142" placeholder="Комментарий к заказу"></textarea>
             <p class="details__limit">Использовано <span data-limit>0</span>/142 символов</p>
           </fieldset>
         </form>
@@ -323,21 +352,24 @@
         </div>
         <div class="total__section">
           <p class="total__item">
-            <label for="delivery" class="total__text">
+            <input type="checkbox" name="delivery" id="delivery" class="total__delivery-input">
+            <label for="delivery" class="total__text total__text--delivery">
               Получить товар со склада
-              <p class="total__delivery-disclaimer">Сроки получения могут измениться</p>
+              <span class="total__delivery-disclaimer">Сроки получения могут измениться</span>
             </label>
-            <input type="checkbox" name="delivery" id="delivery" class="total__delivery">
           </p>
         </div>
         <div class="total__section">
-          <p class="total__item">
+          <p class="total__item total__item--total">
             <span class="total__text">Итого:</span>
             <span class="total__value" data-price>20700</span>
             <span class="rouble">i</span>
           </p>
-          <label class="total__promocode-label" for="promocode">Введите промокод</label>
-          <input class="total__promocode-input" name="promocode" id="promocode">
+          <label class="total__promocode-label">
+            <input type="text" class="total__promocode-input" name="promocode">
+            <span class="total__label-text">Введите промокод</span>
+            <button type="button" class="total__promocode-button">Применить</button>
+          </label>
           <button type="button" class="total__buy">Оформить заказ</button>
           <p class="total__disclaimer">
             Нажимая кнопку “Оформить заказ”, Вы соглашаетесь с
