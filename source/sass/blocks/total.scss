@@ -2,11 +2,20 @@
   padding: 5px 20px;
   border: 1px solid $color-dark-grey;
   height: fit-content;
+  margin-bottom: 38px;
+
+  @include vp-768 {
+    padding: 9px 16px;
+  }
 }
 
 .total__section {
   padding: 25px 0;
   border-bottom: 1px solid $color-basic-grey;
+
+  @include vp-768 {
+    padding: 16px 0;
+  }
 
   &:last-child {
     border: none;
@@ -21,6 +30,12 @@
   line-height: 24px;
   margin: 0 0 20px;
 
+  @include vp-768 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 21px;
+  }
+
   &:last-child {
     margin-bottom: -9px;
   }
@@ -30,16 +45,28 @@
     font-size: 16px;
     line-height: 21px;
 
+    @include vp-768 {
+      margin-top: -3px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+
     & .total__value {
       font-weight: 400;
     }
   }
 
   &--total {
+    margin-bottom: 12px;
     font-weight: 700;
     font-size: 28px;
     line-height: 30px;
-    margin-bottom: 12px;
+
+    @include vp-768 {
+      margin-bottom: 6px;
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 }
 
@@ -60,6 +87,10 @@
   line-height: 15px;
   color: $color-dark-grey;
   margin: 5px 0 0;
+
+  @include vp-768 {
+    margin-top: 10px;
+  }
 }
 
 .total__delivery-input {
@@ -87,7 +118,7 @@
   content: "";
   position: absolute;
   top: 1px;
-  right: 23px;
+  right: 18px;
   width: 22px;
   height: 22px;
   border-radius: 50%;
@@ -96,7 +127,7 @@
 }
 
 .total__delivery-input:checked + .total__text::after {
-  right: -11px;
+  right: -7px;
   background-color: $color-default-black;
 }
 
@@ -108,13 +139,18 @@
 .total__label-text {
   display: block;
   position: absolute;
-  left: 16px;
   top: 15px;
+  left: 16px;
   padding: 0 4px;
   background-color: $color-default-white;
   color: $color-dark-grey;
   transform-origin: left;
   transition: $trans-default;
+
+  @include vp-768 {
+    top: 13px;
+    left: 11px;
+  }
 }
 
 .total__promocode-button {
@@ -124,11 +160,24 @@
   top: 50%;
   transform: translateY(-50%);
   padding: 0;
+  padding-left: 5px;
   border: none;
   background-color: $color-transparent;
   color: $color-default-black;
   font-weight: 700;
   transition: $trans-default;
+  background-color: $color-default-white;
+
+  @include vp-768 {
+    top: 13px;
+    right: 11px;
+    transform: translateY(0);
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-dark-grey;
+  }
 }
 
 .total__promocode-input {
@@ -139,14 +188,21 @@
   line-height: 21px;
   margin-bottom: 20px;
 
+  @include vp-768 {
+    padding: 11px 16px;
+    margin-bottom: 13px;
+  }
+
   &:focus {
     outline: none;
   }
 }
 
-.total__promocode-input:focus ~ .total__promocode-button {
+.total__promocode-input:focus ~ .total__promocode-button,
+.total__promocode-input:not(:empty) ~ .total__promocode-button {
   display: block;
 }
+
 
 .total__promocode-input:focus + .total__label-text {
   transform: translateY(-25px) scale(0.75);
@@ -159,6 +215,19 @@
   background-color: $color-default-black;
   color: $color-default-white;
   font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  cursor: pointer;
+  transition: $trans-default;
+
+  &:hover,
+  &:focus {
+    background-color: $color-dark-grey;
+  }
+
+  &:disabled {
+    background-color: $color-basic-grey;
+  }
 }
 
 .total__disclaimer {

@@ -1,6 +1,14 @@
 .account {
   display: flex;
   align-items: baseline;
+
+  @include vp-1280 {
+    margin-top: 35px;
+  }
+
+  @include vp-768 {
+    display: block;
+  }
 }
 
 .account__heading {
@@ -8,6 +16,12 @@
   font-weight: 400;
   font-size: 40px;
   line-height: 42px;
+
+  @include vp-768 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    line-height: 30px;
+  }
 }
 
 .account__text {
@@ -15,6 +29,10 @@
   font-size: 14px;
   line-height: 18px;
   color: $color-dark-grey;
+
+  @include vp-768 {
+    margin: 0;
+  }
 }
 
 .account__link {

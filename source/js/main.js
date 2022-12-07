@@ -1,10 +1,11 @@
+import {initializeMenu} from './modules/menu.js';
 import {replacePrettyPrices} from './utils/price-prettifiy.js';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
   // Utils
   // ---------------------------------
-
+  initializeMenu();
   replacePrettyPrices();
   // Modules
   // ---------------------------------

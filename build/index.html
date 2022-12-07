@@ -14,10 +14,10 @@
 <body class="page__body">
   <header class="page__header page-header">
     <div class="page-header__wrapper container">
-      <nav class="page-header__nav">
-        <a href="#" class="page-header__nav-link">Каталог</a>
-        <a href="#" class="page-header__nav-link">О компании</a>
-        <a href="#" class="page-header__nav-link">Магазины</a>
+      <nav class="page-header__nav nav nav--opened nav--nojs">
+        <a href="#" class="nav__link">Каталог</a>
+        <a href="#" class="nav__link">О компании</a>
+        <a href="#" class="nav__link">Магазины</a>
       </nav>
       <div class="page-header__logo">
         <a href="#" class="page-header__logo-link">
@@ -28,13 +28,13 @@
         </a>
       </div>
       <div class="page-header__buttons">
-        <a class="page-header__button" href="#">
+        <a class="page-header__button page-header__button--search" href="#">
           <svg class="page-header__button-icon" width="20" height="20" aria-labelledby="icon-search">
             <title id="icon-search">icon-search</title>
             <use xlink:href="img/sprite.svg#icon-search"></use>
           </svg>
         </a>
-        <a class="page-header__button" href="#">
+        <a class="page-header__button page-header__button--account" href="#">
           <svg class="page-header__button-icon" width="20" height="20" aria-labelledby="icon-account">
             <title id="icon-account">icon-account</title>
             <use xlink:href="img/sprite.svg#icon-account"></use>
@@ -52,6 +52,7 @@
             <use xlink:href="img/sprite.svg#icon-bag"></use>
           </svg>
         </a>
+        <button type="button" class="page-header__button page-header__button--menu nav__toggle"></button>
       </div>
     </div>
   </header>
@@ -86,7 +87,7 @@
             <article class="goods__card card">
               <form class="card__form">
                 <picture>
-                  <!-- <source type="image/webp" srcset="img/content/goods-1.webp 1x, img/content/goods-1@2x.webp 2x"> -->
+                  <source type="image/webp" srcset="img/content/goods-1.webp 1x, img/content/goods-1@2x.webp 2x">
                   <img class="card__pic" src="img/content/goods-1.jpg" srcset="img/content/goods-1@2x.jpg 2x" width="130" height="160" alt="куртка">
                 </picture>
                 <div class="card__content">
@@ -196,11 +197,11 @@
             <article class="goods__card card">
               <form class="card__form">
                 <picture>
-                  <!-- <source type="image/webp" srcset="img/content/goods-2.webp 1x, img/content/goods-2@2x.webp 2x"> -->
+                  <source type="image/webp" srcset="img/content/goods-2.webp 1x, img/content/goods-2@2x.webp 2x">
                   <img class="card__pic" src="img/content/goods-2.jpg" srcset="img/content/goods-2@2x.jpg 2x" width="130" height="160" alt="куртка">
                 </picture>
                 <div class="card__content">
-                  <h3 class="card__title">Вязанная щапка Zolla</h3>
+                  <h3 class="card__title">Вязанная шапка Zolla</h3>
                   <label class="card__text-label">
                     Артикул
                     <input class="card__text-value" name="article" value="891-256" disabled>
@@ -298,12 +299,15 @@
               <span class="details__label-text">Email</span>
             </label>
             <label class="details__contacts-label details__contacts-label--address" for="address">
-              <input type="address" class="details__text-input" name="address" id="address" required>
+              <textarea class="details__text-input details__text-input--address" name="address" id="address" required></textarea>
               <span class="details__label-text">Адрес доставки</span>
               <svg class="details__label-button" width="20" height="20">
                 <use xlink:href="img/sprite.svg#icon-search"></use>
               </svg>
             </label>
+            <div class="details__map map">
+              <img class="map__placeholder" src="img/Map.png" width="400" height="450" alt="карта">
+            </div>
           </fieldset>
           <fieldset class="details__field details__field--payment">
             <legend class="details__legend">Оплата</legend>
@@ -366,7 +370,7 @@
             <span class="rouble">i</span>
           </p>
           <label class="total__promocode-label">
-            <input type="text" class="total__promocode-input" name="promocode">
+            <input type="text" class="total__promocode-input" name="promocode" required>
             <span class="total__label-text">Введите промокод</span>
             <button type="button" class="total__promocode-button">Применить</button>
           </label>
@@ -378,9 +382,9 @@
         </div>
       </section>
 
-      <section class="main__section main__section--map map">
+      <!-- <section class="main__section main__section--map map">
         <img class="map__placeholder" src="img/Map.png" width="400" height="450" alt="карта">
-      </section>
+      </section> -->
     </div>
   </main>
 
