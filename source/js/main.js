@@ -1,18 +1,16 @@
+import {initMap} from './modules/map.js';
 import {initializeMenu} from './modules/menu.js';
 import {replacePrettyPrices} from './utils/price-prettifiy.js';
+// import {initDadata} from './modules/dadata.js';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
-  // Utils
-  // ---------------------------------
   initializeMenu();
   replacePrettyPrices();
-  // Modules
-  // ---------------------------------
 
-  // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
-  // в load следует добавить скрипты, не участвующие в работе первого экрана
+  ymaps.ready(initMap);
   window.addEventListener('load', () => {
+    // initDadata();
   });
 });
 

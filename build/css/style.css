@@ -1271,6 +1271,7 @@ input[type="radio"]:checked + .card__colour-button {
 .details__map {
   position: absolute;
   width: 400px;
+  height: 450px;
   top: 0;
   left: calc(100% + 40px);
 }
@@ -1410,6 +1411,18 @@ input[type="radio"]:checked + .details__payment-label::after {
   font-size: 12px;
   line-height: 15px;
   color: #6e6e6e;
+}
+
+.map__placeholder {
+  display: none;
+}
+
+.map--nojs .map__placeholder {
+  display: block;
+}
+
+[class*="copyrights-pane"] {
+  display: none;
 }
 
 .total {

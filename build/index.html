@@ -7,9 +7,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <link rel="stylesheet" href="css/style.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@21.12.0/dist/css/suggestions.min.css" rel="stylesheet" />
 
   <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon">
   <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=876a6183-7739-4cfc-b979-804d4477944a&lang=ru_RU" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@21.12.0/dist/js/jquery.suggestions.min.js"></script>
 </head>
 <body class="page__body">
   <header class="page__header page-header">
@@ -305,7 +310,7 @@
                 <use xlink:href="img/sprite.svg#icon-search"></use>
               </svg>
             </label>
-            <div class="details__map map">
+            <div class="details__map map map--nojs" id="map">
               <img class="map__placeholder" src="img/Map.png" width="400" height="450" alt="карта">
             </div>
           </fieldset>
