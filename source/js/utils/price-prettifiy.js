@@ -11,4 +11,4 @@ const replacePrettyPrices = () => {
   }
 };
 
-export {replacePrettyPrices};
+export {replacePrettyPrices, prettifyPrice};

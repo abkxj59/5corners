@@ -1,3 +1,14 @@
+.card {
+  transform-origin: top;
+  transition: $trans-default;
+}
+
+.card--deleted {
+  opacity: 0;
+  height: 0;
+  transform: scaleY(0);
+}
+
 .card__form {
   display: flex;
   align-items: flex-start;
@@ -270,7 +281,7 @@ input[type="radio"]:checked + .card__colour-button {
   }
 }
 
-.card--deleted {
+.card--placeholder {
   display: flex;
   padding: 15px 25px;
   background-color: $color-light-grey;

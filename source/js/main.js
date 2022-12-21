@@ -1,16 +1,18 @@
 import {initMap} from './modules/map.js';
 import {initializeMenu} from './modules/menu.js';
 import {replacePrettyPrices} from './utils/price-prettifiy.js';
-// import {initDadata} from './modules/dadata.js';
+import {initPromocode} from './modules/promocode.js';
+import {initCards} from './modules/cards.js';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
-  initializeMenu();
   replacePrettyPrices();
+  initializeMenu();
 
   ymaps.ready(initMap);
   window.addEventListener('load', () => {
-    // initDadata();
+    initPromocode();
+    initCards();
   });
 });
 

@@ -145,11 +145,11 @@
                 <div class="card__prices">
                   <div class="card__cost card__cost--per-one">
                     <p class="card__old-price">
-                      <span class="card__price-value" data-price>12000</span>
+                      <span class="card__price-value" data-price data-price-per-one-old>12000</span>
                       <span class="rouble">i</span>
                     </p>
                     <p class="card__price">
-                      <span class="card__price-value" data-price>10000</span>
+                      <span class="card__price-value" data-price data-price-per-one>10000</span>
                       <span class="rouble">i</span>
                     </p>
                   </div>
@@ -168,11 +168,11 @@
                   </div>
                   <div class="card__cost card__cost--total">
                     <p class="card__old-price">
-                      <span class="card__price-value" data-price>24000</span>
+                      <span class="card__price-value" data-price data-price-total-old>24000</span>
                       <span class="rouble">i</span>
                     </p>
                     <p class="card__price">
-                      <span class="card__price-value" data-price>20000</span>
+                      <span class="card__price-value" data-price data-price-total>20000</span>
                       <span class="rouble">i</span>
                     </p>
                   </div>
@@ -188,6 +188,86 @@
           </li>
           <li class="goods__item">
             <article class="goods__card card card--deleted">
+              <form class="card__form">
+                <picture>
+                  <source type="image/webp" srcset="img/content/cat-1.webp">
+                  <img class="card__pic" src="img/content/cat-1.jpg" width="130" height="160" alt="куртка">
+                </picture>
+                <div class="card__content">
+                  <h3 class="card__title">Наименование товара</h3>
+                  <label class="card__text-label">
+                    Артикул
+                    <input class="card__text-value" name="article" value="000-00" disabled>
+                  </label>
+                  <label class="card__text-label">
+                    Сезон
+                    <input class="card__text-value" name="season" value="Уютный" disabled>
+                  </label>
+                  <div class="card__sizes">
+                    <input type="radio" name="size" value="xs" id="prod-3-size-xs" disabled>
+                    <label class="card__size-button" for="prod-3-size-xs">
+                      XS
+                    </label>
+                    <input type="radio" name="size" value="s" id="prod-3-size-s" disabled>
+                    <label class="card__size-button" for="prod-3-size-s">
+                      S
+                    </label>
+                    <input type="radio" name="size" value="m" id="prod-3-size-m" checked>
+                    <label class="card__size-button" for="prod-3-size-m">
+                      M
+                    </label>
+                    <input type="radio" name="size" value="l" id="prod-3-size-l" disabled>
+                    <label class="card__size-button" for="prod-3-size-l">
+                      L
+                    </label>
+                    <input type="radio" name="size" value="xl" id="prod-3-size-xl" disabled>
+                    <label class="card__size-button" for="prod-3-size-xl">
+                      XL
+                    </label>
+                  </div>
+                  <div class="card__colours">
+                    <input type="radio" name="colour" value="black" id="prod-3-color-black" checked>
+                    <label class="card__colour-button card__colour-button--black" for="prod-3-color-black">
+                      <span class="visually-hidden">Black</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="card__prices">
+                  <div class="card__cost card__cost--per-one">
+                    <p class="card__price">
+                      <span class="card__price-value" data-price data-price-per-one>100500</span>
+                      <span class="rouble">i</span>
+                    </p>
+                  </div>
+                  <div class="card__amount">
+                    <button type="button" class="card__num-button card__num-button--minus">
+                      <svg width="32" height="32">
+                        <use xlink:href="img/sprite.svg#minus"></use>
+                      </svg>
+                    </button>
+                    <input type="number" class="card__num-value" name="amount" disabled value="1">
+                    <button type="button" class="card__num-button card__num-button--plus">
+                      <svg width="32" height="32">
+                        <use xlink:href="img/sprite.svg#plus"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="card__cost card__cost--total">
+                    <p class="card__price">
+                      <span class="card__price-value" data-price data-price-total>100500</span>
+                      <span class="rouble">i</span>
+                    </p>
+                  </div>
+                </div>
+                <button type="button" class="card__delete">
+                  <span class="visually-hidden">Убрать</span>
+                  <svg width="22" height="22">
+                    <use xlink:href="img/sprite.svg#icon-x"></use>
+                  </svg>
+                </button>
+              </form>
+            </article>
+            <article class="goods__card card card--placeholder">
               <p class="card__deleted-message">Товар <span class="card__deleted-title">Наименование товара</span> был удален из корзины.</p>
               <button type="button" class="card__recover">Восстановить</button>
               <button type="button" class="card__delete">
@@ -247,7 +327,7 @@
                 <div class="card__prices">
                   <div class="card__cost card__cost--per-one">
                     <p class="card__price">
-                      <span class="card__price-value" data-price>500</span>
+                      <span class="card__price-value" data-price data-price-per-one>500</span>
                       <span class="rouble">i</span>
                     </p>
                   </div>
@@ -266,7 +346,7 @@
                   </div>
                   <div class="card__cost card__cost--total">
                     <p class="card__price">
-                      <span class="card__price-value" data-price>500</span>
+                      <span class="card__price-value" data-price data-price-total>500</span>
                       <span class="rouble">i</span>
                     </p>
                   </div>
@@ -378,6 +458,7 @@
             <input type="text" class="total__promocode-input" name="promocode" required>
             <span class="total__label-text">Введите промокод</span>
             <button type="button" class="total__promocode-button">Применить</button>
+            <span class="total__promocode-message">авыфа</span>
           </label>
           <button type="button" class="total__buy">Оформить заказ</button>
           <p class="total__disclaimer">
@@ -392,6 +473,19 @@
       </section> -->
     </div>
   </main>
+
+  <template id="deleted-card">
+    <article class="goods__card card card--placeholder">
+      <p class="card__deleted-message">Товар <span class="card__deleted-title">Наименование товара</span> был удален из корзины.</p>
+      <button type="button" class="card__recover">Восстановить</button>
+      <button type="button" class="card__delete">
+        <span class="visually-hidden">Убрать</span>
+        <svg width="22" height="22">
+          <use xlink:href="img/sprite.svg#icon-x"></use>
+        </svg>
+      </button>
+    </article>
+  </template>
 
   <script type="module" src="js/main.min.js"></script>
 </body>

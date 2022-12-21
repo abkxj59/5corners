@@ -957,6 +957,23 @@ button,
   border-top: 0.5px solid #c8c8c8;
 }
 
+.card {
+  -webkit-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.card--deleted {
+  opacity: 0;
+  height: 0;
+  -webkit-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  transform: scaleY(0);
+}
+
 .card__form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1194,7 +1211,7 @@ input[type="radio"]:checked + .card__colour-button {
   color: #6e6e6e;
 }
 
-.card--deleted {
+.card--placeholder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1541,6 +1558,7 @@ input[type="radio"]:checked + .details__payment-label::after {
 .total__promocode-label {
   display: block;
   position: relative;
+  margin-bottom: 20px;
 }
 
 .total__label-text {
@@ -1563,10 +1581,7 @@ input[type="radio"]:checked + .details__payment-label::after {
   position: absolute;
   display: none;
   right: 16px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  top: 18px;
   padding: 0;
   padding-left: 5px;
   border: none;
@@ -1590,7 +1605,14 @@ input[type="radio"]:checked + .details__payment-label::after {
   padding: 15px 20px;
   font-size: 16px;
   line-height: 21px;
-  margin-bottom: 20px;
+}
+
+.total__promocode-input--valid {
+  border-color: #007e06;
+}
+
+.total__promocode-input--invalid {
+  border-color: #d92c2c;
 }
 
 .total__promocode-input:focus {
@@ -1598,14 +1620,32 @@ input[type="radio"]:checked + .details__payment-label::after {
 }
 
 .total__promocode-input:focus ~ .total__promocode-button,
-.total__promocode-input:not(:empty) ~ .total__promocode-button {
+.total__promocode-input:valid ~ .total__promocode-button {
   display: block;
 }
 
-.total__promocode-input:focus + .total__label-text {
+.total__promocode-input:focus + .total__label-text,
+.total__promocode-input:valid ~ .total__label-text {
   -webkit-transform: translateY(-25px) scale(0.75);
   -ms-transform: translateY(-25px) scale(0.75);
   transform: translateY(-25px) scale(0.75);
+}
+
+.total__promocode-message {
+  display: none;
+  font-size: 12px;
+  line-height: 15px;
+  margin: 3px 16px;
+}
+
+.total__promocode-input--valid ~ .total__promocode-message {
+  display: inline;
+  color: #007e06;
+}
+
+.total__promocode-input--invalid ~ .total__promocode-message {
+  display: inline;
+  color: #d92c2c;
 }
 
 .total__buy {
@@ -1920,7 +1960,7 @@ input[type="radio"]:checked + .details__payment-label::after {
     margin: 0;
   }
 
-  .card--deleted {
+  .card--placeholder {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     padding: 12px 8px;
@@ -2012,6 +2052,10 @@ input[type="radio"]:checked + .details__payment-label::after {
     margin-top: 10px;
   }
 
+  .total__promocode-label {
+    margin-bottom: 13px;
+  }
+
   .total__label-text {
     top: 13px;
     left: 11px;
@@ -2020,13 +2064,9 @@ input[type="radio"]:checked + .details__payment-label::after {
   .total__promocode-button {
     top: 13px;
     right: 11px;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
   }
 
   .total__promocode-input {
     padding: 11px 16px;
-    margin-bottom: 13px;
   }
 }
