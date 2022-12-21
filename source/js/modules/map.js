@@ -42,7 +42,6 @@ const initMap = () => {
   }
 
   function setMarker(coords) {
-    console.log(coords);
     myPlacemark.geometry.setCoordinates(coords);
     getAddress(coords);
   }

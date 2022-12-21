@@ -1,22 +1,18 @@
 .card {
   transform-origin: top;
   transition: $trans-default;
-}
-
-.card--deleted {
-  opacity: 0;
-  height: 0;
-  transform: scaleY(0);
-}
-
-// .card__form {
-.card {
   display: flex;
   align-items: flex-start;
 
   @include vp-1000 {
     flex-wrap: wrap;
   }
+}
+
+.card--deleted {
+  opacity: 0;
+  height: 0;
+  transform: scaleY(0);
 }
 
 .card__pic {
@@ -57,7 +53,6 @@
     margin-right: 5px;
     margin-bottom: 8px;
     min-height: 111px;
-
   }
 }
 

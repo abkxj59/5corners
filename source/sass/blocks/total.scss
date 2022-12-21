@@ -131,7 +131,7 @@
   background-color: $color-default-black;
 }
 
-.total__promocode-label {
+.total__promocode {
   display: block;
   position: relative;
   margin-bottom: 20px;
@@ -141,7 +141,7 @@
   }
 }
 
-.total__label-text {
+.total__promocode-label {
   display: block;
   position: absolute;
   top: 15px;
@@ -166,7 +166,6 @@
   padding: 0;
   padding-left: 5px;
   border: none;
-  background-color: $color-transparent;
   color: $color-default-black;
   font-weight: 700;
   transition: $trans-default;
@@ -211,8 +210,7 @@
   opacity: 1;
 }
 
-
-.total__promocode-input:focus + .total__label-text {
+.total__promocode-input:focus + .total__promocode-label {
   transform: translateY(-25px) scale(0.75);
 }
 

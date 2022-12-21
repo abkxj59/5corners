@@ -70,6 +70,14 @@
     outline: none;
     color: $color-dark-grey;
   }
+
+  @include vp-1000 {
+    width: 28px;
+
+    svg {
+      width: 100%;
+    }
+  }
 }
 
 .page-header__button--favorite,
@@ -114,16 +122,6 @@
   }
 }
 
-.page-header__button {
-  @include vp-1000 {
-    width: 28px;
-
-    svg {
-      width: 100%;
-    }
-  }
-
-}
 .page-header__button--menu {
   display: none;
   padding: 0;
