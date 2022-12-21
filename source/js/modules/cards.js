@@ -10,6 +10,7 @@ const pasteTemplate = (parent, title) => {
   cardTitle.textContent = title;
   const deleteButton = card.querySelector('.card__delete');
   const recoverButton = card.querySelector('.card__recover');
+  const amount = parent.querySelector('.card__num-value');
 
   deleteButton.addEventListener('click', () => {
     parent.remove();
@@ -18,6 +19,7 @@ const pasteTemplate = (parent, title) => {
   recoverButton.addEventListener('click', () => {
     parent.querySelector('.card--placeholder').remove();
     parent.querySelector('.card--deleted').classList.remove('card--deleted');
+    amount.value = 1;
   });
 
   parent.appendChild(card);
@@ -62,10 +64,12 @@ const initCards = () => {
       const card = item.querySelector('.card');
       const cardPlaceholder = item.querySelector('.card--placeholder');
       const deleteButton = card.querySelector('.card__delete');
+      const amount = item.querySelector('.card__num-value');
 
       deleteButton.addEventListener('click', () => {
         const cardTitle = card.querySelector('.card__title').textContent;
         card.classList.add('card--deleted');
+        amount.value = 0;
         pasteTemplate(item, cardTitle);
       });
 
@@ -80,6 +84,7 @@ const initCards = () => {
         recoverButton.addEventListener('click', () => {
           card.classList.remove('card--deleted');
           cardPlaceholder.remove();
+          amount.value = 1;
         });
       }
 

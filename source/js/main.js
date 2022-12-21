@@ -3,6 +3,8 @@ import {initializeMenu} from './modules/menu.js';
 import {replacePrettyPrices} from './utils/price-prettifiy.js';
 import {initPromocode} from './modules/promocode.js';
 import {initCards} from './modules/cards.js';
+import {initFormSubmit} from './modules/form-submit.js';
+import {initModal} from './modules/modal.js';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -13,6 +15,8 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     initPromocode();
     initCards();
+    initFormSubmit();
+    initModal();
   });
 });
 

@@ -121,6 +121,8 @@
 
   &--address {
     height: 51px;
+    line-height: 19px;
+
 
     @include vp-768 {
       height: 66px;

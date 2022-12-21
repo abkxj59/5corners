@@ -160,7 +160,7 @@
 
 .total__promocode-button {
   position: absolute;
-  display: none;
+  opacity: 0;
   right: 16px;
   top: 18px;
   padding: 0;
@@ -207,14 +207,12 @@
   }
 }
 
-.total__promocode-input:focus ~ .total__promocode-button,
-.total__promocode-input:valid ~ .total__promocode-button {
-  display: block;
+.total__promocode-input:focus ~ .total__promocode-button {
+  opacity: 1;
 }
 
 
-.total__promocode-input:focus + .total__label-text,
-.total__promocode-input:valid ~ .total__label-text {
+.total__promocode-input:focus + .total__label-text {
   transform: translateY(-25px) scale(0.75);
 }
 
